@@ -6,25 +6,19 @@ from docx import Document
 
 
 #document = Document('test8.docx')
-#object  "document" points to the test5 word document provided
+#object  "document" points to the test8 word document provided
 #This function just prints out the two first lines in the word document given
 document = docx.Document('test8.docx')
 print(document.paragraphs[0].text)
 print(document.paragraphs[1].text)
 
-
-############################################
+################################################################
 product = "TARGEST"
 coFounder1 = "Jan"
 coFounder2 = "Adrian"
 coFounder3 = "Stephania"
 name = "NAME"
 title = "TITLE"
-#save_filename = product + ".docx"
-
-
-document = Document('test8.docx')
-#object  "document" points to the test5 word document provided
 
 #check if there is a keyword that you are looking for and if it is, it will replace with the name
 def find_(paragraph_keyword, draft_keyword, paragraph):
@@ -43,16 +37,17 @@ for paragraph in document.paragraphs:
 
 #document.save(save_filename)
 
-excelFile = xw.Book()               #Creates an empty excel file
-excelFile.save('data3.xlsx')        #Saves that excel file as "data1"
+excelFile = xw.Book()                #Creates an empty excel file
+excelFile.save('report.xlsx')        #Saves that excel file as "data1"
 
-ws1 = excelFile.sheets['Sheet1']    #creates object called ws1 and points it to the excelFile sheet
+ws1 = excelFile.sheets['Sheet1']     #creates object called ws1 and points it to the excelFile sheet
 
-ws1.range('A1').value = name        #Adds the string "Name" to A2
-ws1.range('B1').value = title       #Adds the string "Title" to A2
-ws1.range('A2').value = coFounder1
-ws1.range('A3').value = coFounder2
-ws1.range('A4').value = coFounder3
+ws1.range('A1').value = name         #Adds the string "Name" to A2
+ws1.range('B1').value = title        #Adds the string "Title" to B1
+ws1.range('A2').value = coFounder1   #Adds name of Co-Founder 1 to A2
+ws1.range('A3').value = coFounder2   #Adds name of Co-Founder 2 to A3
+ws1.range('A4').value = coFounder3   #Adds name of Co-Founder 3 to A3
+ws1.range('C1').value = product      #Adds name of the product to C1
 
 #ws1.range('A8').value = doc.paragraphs[2].text
 #ws1.range('B8').value = doc.paragraphs[3].text
